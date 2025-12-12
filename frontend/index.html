@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>DigitalAddWorld – Best Digital Marketing Agency in India | SEO, SMM, Web Development</title>
+
+  <!-- Primary SEO Meta Tags -->
+  <meta name="title" content="DigitalAddWorld – Best Digital Marketing Agency in India">
+  <meta name="description" content="DigitalAddWorld is a top digital marketing agency providing SEO, Social Media Marketing, Website Development, Graphics Designing, Google Ads & Branding Solutions. Grow your business with our result-driven digital strategies.">
+  <meta name="keywords" content="digital marketing agency, seo services, social media marketing, web development, google ads, digitaladdworld, india digital marketing company, website designing, facebook ads, instagram promotion">
+  <meta name="author" content="DigitalAddWorld">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://digitaladdworld.in/">
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="DigitalAddWorld – Leading Digital Marketing Agency">
+  <meta property="og:description" content="Get SEO, SMM, Google Ads, Web Development & Branding services at affordable prices. Boost your business with DigitalAddWorld.">
+  <meta property="og:image" content="https://digitaladdworld.in/images/img1.png">
+  <meta property="og:url" content="https://digitaladdworld.in/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DigitalAddWorld">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DigitalAddWorld – Best Digital Marketing Company">
+  <meta name="twitter:description" content="Professional SEO, SMM, Google Ads, Website Development & Branding services.">
+  <meta name="twitter:image" content="https://digitaladdworld.in/images/img1.png">
+
+  <!-- Business Schema Markup (SEO Booster) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DigitalMarketingAgency",
+    "name": "DigitalAddWorld",
+    "url": "https://digitaladdworld.in/",
+    "logo": "https://digitaladdworld.in/images/logo.png",
+    "sameAs": [
+      "https://facebook.com/digitaladdworld",
+      "https://instagram.com/digitaladdworld",
+      "https://linkedin.com/company/digitaladdworld"
+    ],
+    "description": "DigitalAddWorld is a full-service digital marketing agency specializing in SEO, Social Media Marketing, Google Ads, Branding & Web Development.",
+    "founder": "DigitalAddWorld Team",
+    "foundingDate": "2023",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hrteam@digitaladdworld.in",
+      "contactType": "customer support"
+    }
+  }
+  </script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+
+  <body>
+
+    <!-- ⬇⬇⬇  NAVBAR PLACEHOLDER (Navbar yahi load hoga) -->
+    <div id="navbar-container"></div>
+    <!-- ⬆⬆⬆ -->
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-slider">
+        <div class="slide active" style="background-image: url('images/img1.png')"></div>
+        <div class="slide" style="background-image: url('images/img2.png')"></div>
+        <div class="slide" style="background-image: url('images/img3.png')"></div>
+        <div class="slide" style="background-image: url('images/image4.png')"></div>
+        <div class="slide" style="background-image: url('images/image5.png')"></div>
+      </div>
+
+      <div class="hero-content">
+        <h1>DigitalAddWorld</h1>
+        <p class="tagline-1">Your Powerhouse of Digital Marketing Solutions</p>
+        <p class="tagline-2">
+          We help businesses grow with smart digital marketing solutions.
+        </p>
+        <a href="contact.html" class="btn-get-started">Get In Touch</a>
+      </div>
+
+      <div class="slider-nav">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" style="padding: 60px 20px; background: #f2f2f2; text-align: center">
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="counter" data-target="99">0</div>
+          <p>Happy Customers</p>
+        </div>
+        <div class="stat-card">
+          <div class="counter" data-target="25">0</div>
+          <p>Successful Businesses</p>
+        </div>
+        <div class="stat-card">
+          <div class="counter" data-target="120">0</div>
+          <p>Total Clients</p>
+        </div>
+        <div class="stat-card">
+          <div class="counter" data-target="5">0</div>
+          <p>Stars Reviews</p>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .stats-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+      }
+      .stat-card {
+        width: 200px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .counter {
+        font-size: 2.5em;
+        color: #007bff;
+      }
+    </style>
+
+    <script>
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        const updateCount = () => {
+          const target = +counter.getAttribute("data-target");
+          const count = +counter.innerText;
+          const increment = target / 100;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCount();
+      });
+    </script>
+
+    <!-- Team Section -->
+    <section class="team" style="padding: 60px 20px; text-align: center">
+      <h2 style="font-size: 2.5em; margin-bottom: 40px">Our Employees</h2>
+
+      <div class="team-members" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
+        
+        <div class="member" style="width: 200px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+          <img src="https://picsum.photos/150" alt="Employee 1" style="width: 100%; border-radius: 50%; margin-bottom: 15px" />
+          <h3>Sandeep Sharma</h3>
+          <p>Project Head</p>
+        </div>
+
+        <div class="member" style="width: 200px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+          <img src="images/Meghaphoto.jpeg" alt="Megha Pandya" style="width: 100%; border-radius: 50%; margin-bottom: 15px" />
+          <h3>Megha Pandya</h3>
+          <p>Java Developer</p>
+        </div>
+
+        <div class="member" style="width: 200px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+          <img src="images/Kritikaphoto.jpeg" alt="Kritika Gupta" style="width: 100%; border-radius: 50%; margin-bottom: 15px" />
+          <h3>Kritika Gupta</h3>
+          <p>HR</p>
+        </div>
+
+        <div class="member" style="width: 200px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+          <img src="images/Akshyaphoto.jpeg" alt="Akshya Jain" style="width: 100%; border-radius: 50%; margin-bottom: 15px" />
+          <h3>Akshya Jain</h3>
+          <p>Python Developer</p>
+        </div>
+
+        <div class="member" style="width: 200px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+          <img src="images/Ankitphoto.jpeg" alt="Ankit Jaiswal" style="width: 100%; border-radius: 50%; margin-bottom: 15px" />
+          <h3>Ankit Jaiswal</h3>
+          <p>Full Stack Developer</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background: #35309c;
+        color: #fff;
+        padding: 60px 20px;
+        line-height: 1.8;
+      "
+    >
+      <h2 style="text-align: center; margin-bottom: 20px; font-size: 2em">
+        DigitaladdworldTech
+      </h2>
+
+      <p style="max-width: 700px; margin: 0 auto 40px auto; text-align: center">
+        We at <strong>Digitaladdworld Tech</strong> are proud to say that we are
+        a top-notch digital marketing agency fully committed to providing
+        innovative IT Solutions.
+      </p>
+
+      <div style="text-align: center; margin-bottom: 20px">
+        <h3>✉️ Connected On</h3>
+        <a href="mailto:hrteam@digitaladdworld.in" style="color: #fff; display: block; font-weight: bold;">
+          hrteam@digitaladdworld.in
+        </a>
+      </div>
+
+      <p style="text-align: center; font-size: 0.9em; color: #ccc">
+        © 2025 Digitaladdworld, All rights reserved.
+      </p>
+    </footer>
+
+
+    <!-- Load Navbar JS -->
+    <script src="./include-navbar.js"></script>
+
+  </body>
+</html>

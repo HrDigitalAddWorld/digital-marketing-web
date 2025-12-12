@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 🔥 NAVBAR WILL LOAD HERE -->
+    <div id="navbar-container"></div>
+    <div class="auth-container">
+      <div class="auth-box">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <input type="email" id="email" placeholder="Enter Email" required />
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+        <p>Don’t have an account? <a href="register.html">Register</a></p>
+        <div id="message"></div>
+      </div>
+    </div>
+
+    <script>
+      const loginForm = document.getElementById("loginForm");
+      const messageDiv = document.getElementById("message");
+
+      loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        messageDiv.innerHTML = "";
+
+        const user = {
+          email: loginForm.email.value.trim().toLowerCase(),
+          password: loginForm.password.value,
+        };
+
+        try {
+          const response = await fetch("http://localhost:5000/api/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(user),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+            messageDiv.className = "success message";
+            messageDiv.textContent = "Login successful! Redirecting...";
+
+            // Save login state and token in localStorage
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("token", data.token || "");
+            localStorage.setItem("userEmail", user.email);
+            localStorage.setItem("isAdmin", data.isAdmin || "false");
+
+            console.log("✅ User logged in:", user.email);
+            console.log("Token saved:", data.token);
+            console.log("Admin status:", data.isAdmin);
+
+            setTimeout(() => {
+              window.location.href = "index.html";
+            }, 1500);
+          } else {
+            messageDiv.className = "error message";
+            messageDiv.textContent =
+              data.extraDetails || data.message || "Invalid credentials!";
+            console.warn("⚠️ Login failed:", data.message);
+          }
+
+          loginForm.reset();
+        } catch (error) {
+          messageDiv.className = "error message";
+          messageDiv.textContent = "Server not responding!";
+          console.error("❌ Login Error:", error);
+        }
+      });
+    </script>
+    <!-- Load Navbar JS -->
+    <script src="./include-navbar.js"></script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+/* ============================
+   NAVBAR CLEAN CSS
+   ============================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  background: #5bd5cd;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Desktop Menu */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #683bc9;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #5bd5cd;
+    padding: 20px 0;
+    text-align: center;
+    display: none;
+  }
+
+  nav ul.show {
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

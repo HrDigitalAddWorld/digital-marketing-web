@@ -1,0 +1,241 @@
+<!-- ========== NAVBAR HTML START ========== -->
+<style>
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background: linear-gradient(90deg, #29145c, #20c520);
+        color: #fff;
+        position: relative;
+        z-index: 1000;
+    }
+
+    .logo img {
+        height: 55px;
+        width: auto;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+    }
+
+    /* Dropdown + Mega Menu */
+    .mega-dropdown {
+        position: relative;
+    }
+
+    .mega-menu {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 1000px;
+        background: #fff;
+        color: black;
+        padding: 25px;
+        display: none;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+    }
+
+    .mega-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mega-col h4 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #29145c;
+    }
+
+    .mega-col ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .mega-col ul li a {
+        text-decoration: none;
+        color: #333;
+        font-size: 15px;
+        display: block;
+        margin: 5px 0;
+    }
+
+    .mega-dropdown:hover .mega-menu {
+        display: block;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    .hamburger span {
+        width: 30px;
+        height: 3px;
+        background: #fff;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+        .hamburger {
+            display: flex;
+        }
+
+        nav {
+            position: absolute;
+            top: 75px;
+            right: 0;
+            background: #29145c;
+            width: 250px;
+            display: none;
+            padding: 20px;
+            border-radius: 0 0 0 15px;
+        }
+
+        nav.active {
+            display: block;
+        }
+
+        nav ul {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mega-menu {
+            display: none !important;
+        }
+
+        .mega-dropdown a::after {
+            content: "";
+        }
+
+        nav ul li {
+            color: #fff;
+        }
+    }
+</style>
+
+<header>
+    <div class="logo">
+        <img src="images/Companylogo.png" alt="Company Logo">
+    </div>
+
+    <!-- Hamburger -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li class="mega-dropdown">
+                <a href="services.html">Services ▼</a>
+
+                <div class="mega-menu">
+                    <div class="mega-row">
+
+                        <div class="mega-col">
+                            <h4>Web Design</h4>
+                            <ul>
+                                <li><a href="#">UI/UX Design</a></li>
+                                <li><a href="#">Graphic Design</a></li>
+                                <li><a href="#">Logo Design</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mega-col">
+                            <h4>Website Development</h4>
+                            <ul>
+                                <li><a href="#">PHP Development</a></li>
+                                <li><a href="#">Laravel Development</a></li>
+                                <li><a href="#">Node.js Development</a></li>
+                                <li><a href="#">React.js Development</a></li>
+                                <li><a href="#">Java Development</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mega-col">
+                            <h4>E-Commerce Development</h4>
+                            <ul>
+                                <li><a href="#">Magento</a></li>
+                                <li><a href="#">Shopify</a></li>
+                                <li><a href="#">WooCommerce</a></li>
+                                <li><a href="#">BigCommerce</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mega-col">
+                            <h4>Mobile App Development</h4>
+                            <ul>
+                                <li><a href="#">iOS App</a></li>
+                                <li><a href="#">Android App</a></li>
+                                <li><a href="#">Hybrid App</a></li>
+                                <li><a href="#">React Native</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="career.html">Career</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    const hamburger = document.getElementById("hamburger");
+    const navbar = document.getElementById("navbar");
+
+    hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navbar.classList.toggle("active");
+    });
+
+    // Close menu on clicking link (mobile)
+    document.querySelectorAll("nav ul li a").forEach(link => {
+        link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navbar.classList.remove("active");
+        });
+    });
+</script>
+<!-- ========== NAVBAR HTML END ========== -->
