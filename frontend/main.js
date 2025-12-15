@@ -9,7 +9,6 @@ import { ref, push } from "firebase/database";
 
 // ==============================
 // Backend Server IP
-const BASE_URL = "http://159.89.164.156:5000";
 
 // ==============================
 // Read More / Read Less Toggle
@@ -56,7 +55,8 @@ if (contactForm) {
     const message = document.getElementById("message").value;
 
     try {
-      const response = await fetch(`${BASE_URL}/api/contact`, {
+      const response = await fetch("/api/form", {
+
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
@@ -86,7 +86,7 @@ if (registerForm) {
     const password = document.getElementById("regPassword").value;
 
     try {
-      const response = await fetch(`${BASE_URL}/api/auth/register`, {
+      const response = await fetch("/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
@@ -115,7 +115,7 @@ if (loginForm) {
     const password = document.getElementById("loginPassword").value;
 
     try {
-      const response = await fetch(`${BASE_URL}/api/auth/login`, {
+      const response = await fetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
