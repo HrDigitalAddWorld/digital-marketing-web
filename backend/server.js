@@ -20,6 +20,10 @@ app.use(cors(corsOptions));
 app.get("/ping", (req, res) => {
   res.send("Backend working perfectly 🚀");
 });
+app.get("/api/form", (req, res) => {
+  res.send("Form API alive ✅");
+});
+
 
 app.use(express.json());
 app.use("/api/auth", authRoute);
