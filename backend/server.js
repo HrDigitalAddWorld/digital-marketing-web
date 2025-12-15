@@ -17,6 +17,10 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
+app.get("/ping", (req, res) => {
+  res.send("Backend working perfectly 🚀");
+});
+
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/form", contactRoute);
@@ -33,3 +37,4 @@ connectDb().then(() => {
     console.log(`✅ server is running at port: ${PORT}`);
   });
 });
+
